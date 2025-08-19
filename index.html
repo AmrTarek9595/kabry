@@ -31,11 +31,37 @@
       <link rel="stylesheet" href="css/owl.carousel.min.css">
       <link rel="stylesheet" href="css/owl.theme.default.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+      <style>
+   @media (max-width: 768px) { /* لحد التابلت والموبايل */
+  .carousel-indicators {
+    display: none !important;
+  }
+}
+
+   body {
+    position: relative;
+    padding: 50px 20px;
+    z-index: 1;
+}
+body::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* semi-transparent overlay */
+    border-radius: 12px;            /* matches container shape */
+    z-index: -1;                    /* sits behind the content */
+}
+  .vertical-img {
+    max-height: 600px; /* adjust to your need */
+    width: auto;
+    object-fit: contain; /* keeps aspect ratio */
+  }
+</style>
    </head>
    <body style="background: url(images/2.jpg) no-repeat center center;
 background-size: cover;">
       <!-- header section start -->
-      <div class="header_section">
+      <div class="header_section" style="background-color: transparent;">
          <div class="container-fluid">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                <a class="navbar-brand" href="index.html"><img src="images/logo-yellow.png" style="width: 120px;"></a>
@@ -71,87 +97,42 @@ background-size: cover;">
       </div>
       <!-- header section start -->
       <!-- banner section start -->
-      <!-- <div class="banner_section layout_padding">
-   <div class="container">
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="height: 70dvh;">
-     -->
-    <!-- Indicators -->
-    <!-- <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    </ol> -->
 
-    <!-- Slides -->
-    <!-- <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="images/1.jpg" class="d-block mx-auto img-fluid vertical-img" alt="Slide 1">
-      </div>
-      <div class="carousel-item">
-        <img src="images/2.jpg" class="d-block mx-auto img-fluid vertical-img" alt="Slide 2">
-      </div>
-      <div class="carousel-item">
-        <img src="images/3.jpg" class="d-block mx-auto img-fluid vertical-img" alt="Slide 3">
-      </div>
-
-    </div> -->
-
-    <!-- Controls -->
-    <!-- <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </a>
-  </div>
-</div> -->
-
-<!-- CSS for vertical images -->
-<style>
-  .vertical-img {
-    max-height: 600px; /* adjust to your need */
-    width: auto;
-    object-fit: contain; /* keeps aspect ratio */
-  }
-</style>
-
-      </div>
       <!-- banner section end -->
 
       <!-- contact section start -->
       <div class="contact_section layout_padding">
 <div class="container contact-container">
-    <h1 class="contact_taital" style="color: wheat;">Get In Touch</h1>
+    <h1 class="contact_taital" style="color: wheat;">تواصل معنا</h1>
     <div class="contact_section_2">
         <div class="row">
-            <div class="col-sm-12" style="    background-color: #faebd71f;
-    border-radius: 200px;">
+            <div class="col-sm-12" style="background-color: #faebd71f; border-radius: 200px; direction: rtl;">
                 <div class="contact_main layout_padding">
                    <form id="contactForm">
                      <div class="form-group">
-                        <input type="text" id="name" class="email-bt" placeholder="Name" name="Name" required>
+                        <input type="text" id="name" class="email-bt" placeholder="الاسم" name="Name" required>
                      </div>
                      <div class="form-group">
-                        <input type="number" id="phone" class="email-bt" placeholder="Phone Number" name="Phone Number" required>
+                        <input type="number" id="phone" class="email-bt" placeholder="رقم الهاتف" name="Phone Number" required>
                      </div>
                      <div class="form-group">
-                        <input type="email" id="email" class="email-bt" placeholder="Email" name="Email" required>
+                        <input type="email" id="email" class="email-bt" placeholder="البريد الإلكتروني" name="Email" required>
                      </div>
                      <div class="form-group">
-                        <textarea id="message" class="massage-bt" placeholder="Message" rows="5" name="Message" required></textarea>
+                        <textarea id="message" class="massage-bt" placeholder="رسالتك" rows="5" name="Message" required></textarea>
                      </div>
 
-                      <div class="send_bt">
-  <a href="javascript:void(0)" onclick="sendToWhatsApp()">Send Now</a>
-</div>
-
-              
+                     <div class="send_bt">
+                        <a href="javascript:void(0)" onclick="sendToWhatsApp()">إرسال الآن</a>
+                     </div>
+                  
                   </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 <script>
 function sendToWhatsApp() {
     // Get form values
@@ -180,59 +161,164 @@ function sendToWhatsApp() {
 }
 </script>
 
-<style>
-   .contact_section {
-    position: relative;
-    padding: 50px 20px;
-    z-index: 1;
-}
 
-.contact_section::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.6); /* semi-transparent overlay */
-    border-radius: 12px;            /* matches container shape */
-    z-index: -1;                    /* sits behind the content */
-}
-
-</style>
       </div>
       <!-- contact section end -->
-      <!-- footer section start -->
-      <!-- <div class="footer_section">
+
+
+
+
+            <div class="banner_section layout_padding">
+   <div class="container">
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="height: 70dvh;">
+    
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+       <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+        
+    </ol>
+
+    <!-- Slides -->
+    <div class="carousel-inner">
+                 <div class="carousel-item active">
+               <video autoplay muted controls playsinline class="d-block mx-auto img-fluid vertical-img">
+                  <source src="images/vid-5.mp4" type="video/mp4">
+               </video>
+        <!-- <img src="images/2.jpg" class="d-block mx-auto img-fluid vertical-img" alt="Slide 2"> -->
+      </div>
+      <div class="carousel-item ">
+           <video autoplay muted controls playsinline class="d-block mx-auto img-fluid vertical-img">
+               <source src="images/vid-1.mp4" type="video/mp4">
+            </video>
+        <!-- <img src="images/1.jpg" class="d-block mx-auto img-fluid vertical-img" alt="Slide 1"> -->
+      </div>
+      <div class="carousel-item">
+               <video autoplay muted controls playsinline class="d-block mx-auto img-fluid vertical-img">
+                  <source src="images/vid-2.mp4" type="video/mp4">
+               </video>
+        <!-- <img src="images/2.jpg" class="d-block mx-auto img-fluid vertical-img" alt="Slide 2"> -->
+      </div>
+      <div class="carousel-item">
+        <img src="images/3.jpg" class="d-block mx-auto img-fluid vertical-img" alt="Slide 3">
+      </div>
+     <div class="carousel-item">
+               <video autoplay muted controls playsinline class="d-block mx-auto img-fluid vertical-img">
+                  <source src="images/vid-3.mp4" type="video/mp4">
+               </video>
+        <!-- <img src="images/2.jpg" class="d-block mx-auto img-fluid vertical-img" alt="Slide 2"> -->
+      </div>
+
+           <div class="carousel-item">
+               <video autoplay muted controls playsinline class="d-block mx-auto img-fluid vertical-img">
+                  <source src="images/vid-4.mp4" type="video/mp4">
+               </video>
+        <!-- <img src="images/2.jpg" class="d-block mx-auto img-fluid vertical-img" alt="Slide 2"> -->
+      </div>
+
+
+
+
+
+    </div>
+
+    <!-- Controls -->
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+  </div>
+</div>
+
+<!-- CSS for vertical images -->
+
+
+      </div>
+
+      
+<div class="about_section layout_padding">
+         <div class="container">
+            <div class="about_main">
+               <div class="row">
+<div class="col-sm-12" style="direction: rtl;">
+   <h1 class="about_taital" style="color: wheat; font-size: 28px;">لماذا نحن؟</h1>
+   
+   <ul class="about_text" style="color: wheat; font-size: 18px; list-style: none; padding: 0; line-height: 1.9;">
+      <li><strong>مساحات واسعة:</strong> قاعاتنا تستوعب أعدادًا كبيرة من المدعوين، مثالية للتجمعات الكبيرة.</li>
+      <li><strong>تصميم مريح وأنيق:</strong> ديكورات داخلية راقية توفر بيئة مريحة للجلوس والطعام والترفيه.</li>
+      <li><strong>خدمات متكاملة:</strong> ضيافة، إضاءة وصوت، تزيين، وخدمات أخرى حسب الطلب.</li>
+      <li><strong>أجواء احتفالية:</strong> تجربة مميزة تجعل مناسبتك ذكرى لا تُنسى.</li>
+      <li><strong>خصوصية وأمان:</strong> قاعات مجهّزة ببيئة آمنة وخدمات أمنية للضيوف.</li>
+   </ul>
+
+   <h2 class="about_taital" style="color: wheat; font-size: 26px; margin-top: 20px;">أنواع قاعات المناسبات</h2>
+   <ul class="about_text" style="color: wheat; font-size: 18px; list-style: none; padding: 0; line-height: 1.9;">
+      <li>🎉 <strong>قاعات الأفراح:</strong> مخصصة للزفاف والمناسبات الزوجية.</li>
+      <li>💼 <strong>قاعات المؤتمرات:</strong> مجهزة للاجتماعات والندوات.</li>
+      <li>🥳 <strong>قاعات الاحتفالات:</strong> مثالية لأعياد الميلاد والتخرج.</li>
+      <li>🏡 <strong>استراحات المناسبات:</strong> لحفلات عائلية صغيرة واجتماعات خاصة.</li>
+   </ul>
+
+   <h2 class="about_taital" style="color: wheat; font-size: 26px; margin-top: 20px;">كيف تختار القاعة المناسبة؟</h2>
+   <ul class="about_text" style="color: wheat; font-size: 18px; list-style: none; padding: 0; line-height: 1.9;">
+      <li>📏 <strong>المساحة:</strong> تأكد أنها تناسب عدد المدعوين.</li>
+      <li>🎨 <strong>التصميم والديكور:</strong> اختَر ما يعجبك ويتماشى مع المناسبة.</li>
+      <li>🛎 <strong>الخدمات:</strong> ضيافة، إضاءة، صوت، وغيرها.</li>
+      <li>📍 <strong>الموقع:</strong> قاعة يسهل الوصول إليها.</li>
+      <li>💰 <strong>السعر:</strong> قارن بين الأسعار لتجد الأنسب.</li>
+   </ul>
+</div>
+
+
+               </div>
+            </div>
+         </div>
+      </div>
+
+            <!-- footer section start -->
+      <div class="footer_section">
          <div class="location_bg">
             <div class="container">
                <div class="location_main">
                   <ul>
-                     <li>
+                     <!-- <li>
                         <a href="#"><img src="images/map-icon.png">
                         <span class="padding_15">Location</span></a>
-                     </li>
+                     </li> -->
                      <li>
-                        <a href="#"><img src="images/call-icon.png">
-                        <span class="padding_15">Call +01 1234567890</span></a>
+                        <a href="tel:+966 55 987 3719"><img src="images/whats.png" style="width: 25px;">
+                        <span class="padding_15">+966 55 987 3719</span></a>
                      </li>
-                     <li>
+                     <!-- <li>
                         <a href="#"><img src="images/mail-icon.png">
                         <span class="padding_15">demo@gmail.com</span></a>
-                     </li>
+                     </li> -->
                   </ul>
                </div>
             </div>
          </div>
-         <div class="map_main">
+         <!-- <div class="map_main">
             <div class="map-responsive">
                <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&amp;q=Eiffel+Tower+Paris+France" width="600" height="400" frameborder="0" style="border:0; width: 100%;" allowfullscreen=""></iframe>
             </div>
-         </div>
-      </div> -->
+         </div> -->
+      </div>
       <!-- footer section end -->
       <!-- copyright section start -->
       <div class="copyright_section">
-         <div class="container">
-            <p class="copyright_text">© 2025 All Rights Reserved.Design by <a href="!#">Atlas Information</a> </p>
-         </div>
+<div class="container">
+   <p class="copyright_text">
+      © 2025 جميع الحقوق محفوظة. تصميم وتطوير بواسطة 
+      <a href="!#">Atlas Information</a>
+   </p>
+</div>
+
       </div>
       <!-- copyright section end -->
       <!-- Javascript files-->
